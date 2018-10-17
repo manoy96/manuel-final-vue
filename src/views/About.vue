@@ -23,6 +23,8 @@ export default {
 <style scoped>
 ul{
   list-style-type: none;
+  text-align: left;
+  color:brown;
 }
 
 </style>
