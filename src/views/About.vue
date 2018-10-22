@@ -2,7 +2,7 @@
   <v-container grid-list-xl>
     <v-layout row wrap>
       <v-flex v-for="ship in starships" :key="ship.model" xs3>
-      <v-card>
+      <v-card height="225px">
         <v-card-title primary-title>
         <div>
           <h3 class="headline nb-9">{{ ship.name }}</h3>
