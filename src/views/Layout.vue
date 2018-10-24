@@ -14,6 +14,7 @@
   <v-content>
     <v-container fluid>
       <router-view></router-view>
+      <div>My content goes here</div>
     </v-container>
   </v-content>
 
