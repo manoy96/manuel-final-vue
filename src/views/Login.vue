@@ -51,7 +51,7 @@ export default {
     password: {
       required,
       minLen: minLength(6),
-      password
+    
     }
   },
   methods: {
