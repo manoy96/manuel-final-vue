@@ -8,7 +8,7 @@
             <v-text-field
               label="email"
               v-model="email"
-              @input="$v.email.$touch()"
+              @blur="$v.email.$touch()"
               placeholder="youremail@mail.com">
             </v-text-field>
             <p v-if="!$v.email.email">Please provide a valid email address</p>
@@ -18,6 +18,8 @@
               v-model="password"
               :type="show1 ? 'text' : 'password'"
               :class="{invalid: $v.password.$error}"
+              :rules="[rules.required]"
+              validate-on-blur
               @input="$v.password.$touch()">
             </v-text-field>
              <p v-if="!$v.password.required">Please provide a password</p>
@@ -33,14 +35,14 @@
 </template>
 
 <script>
-import { required, email, minLength } from 'vuelidate/lib/validators'
+import { required, email } from 'vuelidate/lib/validators'
 
 export default {
   data() {
     return {
       show1: false,
-      password: 'password',
-      email: 'email'
+      password: 'Password',
+      email: ''
     }
   },
   validations: {
@@ -48,12 +50,11 @@ export default {
       required,
       email,
     },
-    password: {
-      required,
-      minLen: minLength(6),
-    
-    }
   },
+  rules: {
+      required: value => !!value || 'Required.',
+      min: v => v.length >= 8 || 'Min 8 characters',
+    },
   methods: {
     onSubmit() {
       console.log('thanks for submitting!')
@@ -63,7 +64,5 @@ export default {
 </script>
 
 <style scoped>
-.input.invalid div{
 
-}
 </style>

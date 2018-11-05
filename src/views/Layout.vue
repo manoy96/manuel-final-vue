@@ -14,7 +14,7 @@
   <v-content>
     <v-container fluid>
       <router-view></router-view>
-      <div>My content goes here</div>
+      <div v-box-shadow:offset="3">My content goes here</div>
     </v-container>
   </v-content>
 

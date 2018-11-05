@@ -8,6 +8,12 @@ import Vuelidate from "vuelidate";
 
 Vue.use(Vuelidate);
 
+Vue.directive('box-shadow', {
+  bind(el, binding, vnode) {
+    el.style.boxShadow = "0px 3px 5px #666"
+  }
+})
+
 Vue.config.productionTip = false;
 
 new Vue({
